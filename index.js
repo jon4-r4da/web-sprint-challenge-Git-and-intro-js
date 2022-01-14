@@ -209,16 +209,17 @@ Practice accessing data above by console.log-ing following items:
 
 //(1) Name of the first artist (0th index) in the array
 
+console.log(artists[0]['name']);
 
 //(2) Bio of the third artist (2nd index) in the array 
 
-
+console.log(artists[2]['bio']);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 (no function needed) 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Fix this issue and console.log() to check your work. */
 
-
+artists[8] = 'Vincent Van Gogh'
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀  
 Use getArtistByIndex to do the following:
@@ -244,9 +245,16 @@ If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 // Hint - Look up the .split() method
 
 function get20s(array) {
-  artists.split({'5' : '17'})
-  return array;
+  const filtered = [];
+  for(let i = 0; i < array.length; i++){
+    if(artists[i].years === '1900 - 2000'){
+    filtered.split(array[i].name);
+  }
 }
+return filtered;
+}
+
+console.log(artistByCountry(artists, '1900 - 2000'));
 
 
 
@@ -259,8 +267,8 @@ Use removeArtist to do the following:
 
 For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
 
-function removeArtist(/*Your Code Here*/) {
-  /*Your Code Here*/
+function removeArtist(array, number) {
+
 }
 
 
@@ -294,9 +302,11 @@ Use lotsOfArt to do the following:
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
-function lotsOfArt(/*Your Code Here*/) {
-  /*Your Code Here*/
-}
+function lotsOfArt(array) {
+ 
+  }
+
+
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 8: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -323,10 +333,17 @@ Use artistByCountry to do the following:
 For example artistByCountry(artists, 'Spanish') will return: [ 'Salvador Dali', 'Pablo Picasso', 'Francisco Goya', 'El Greco' ]
 */
 
-function artistByCountry(/*Your Code Here*/){
-  /*Your Code Here*/
+function artistByCountry(array, nationality){
+  const filtered = [];
+  for(let i = 0; i < array.length; i++){
+    if(array[i].nationality === nationality){
+    filtered.push(array[i].name);
+  }
+}
+return filtered;
 }
 
+console.log(artistByCountry(artists, 'Spanish'));
 
 
 /* ***** END OF TASKS ***** */
